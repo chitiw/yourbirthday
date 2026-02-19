@@ -1,123 +1,119 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 24.8.1.2 (Linux)"/>
-	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="00:00:00"/>
-	<style type="text/css">
-		@page { size: 8.27in 11.69in; margin: 0.79in }
-		p { line-height: 115%; margin-bottom: 0.1in; background: transparent }
-		pre { background: transparent }
-		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
-		pre.cjk { font-family: "NSimSun", monospace; font-size: 10pt }
-		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
-	</style>
-</head>
-<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre class="western">&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;id&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Happy 31st Birthday!&lt;/title&gt;
-    &lt;style&gt;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 31st Birthday!</title>
+    <style>
         body {
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100vh;
+            min-height: 100vh;
             background: linear-gradient(135deg, #fceabb, #f8b500);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
             text-align: center;
         }
 
         .card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 20px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             z-index: 10;
-            max-width: 400px;
-            animation: bounce 2s infinite;
+            max-width: 90%;
+            width: 350px;
+            margin: 20px;
         }
 
-        h1 { color: #d35400; margin-bottom: 10px; }
-        h2 { color: #e67e22; font-size: 3rem; margin: 0; }
-        p { color: #555; line-height: 1.6; }
+        /* Gaya Bingkai Gambar */
+        .photo-frame {
+            width: 100%;
+            height: 250px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-bottom: 15px;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Agar gambar tidak gepeng */
+        }
+
+        h1 { color: #d35400; font-size: 1.5rem; margin: 10px 0; }
+        h2 { color: #e67e22; font-size: 2.5rem; margin: 0; }
+        p { color: #555; line-height: 1.5; font-size: 0.9rem; }
 
         .btn {
             background: #e67e22;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 50px;
             cursor: pointer;
             font-weight: bold;
-            margin-top: 20px;
+            margin-top: 15px;
             transition: 0.3s;
         }
 
-        .btn:hover { background: #d35400; transform: scale(1.1); }
+        .btn:hover { background: #d35400; transform: scale(1.05); }
 
         /* Animasi Balon */
         .balloon {
             position: absolute;
             bottom: -100px;
-            width: 50px;
-            height: 70px;
-            background: rgba(255, 255, 255, 0.7);
+            width: 40px;
+            height: 60px;
             border-radius: 50%;
-            animation: float 8s infinite ease-in;
+            animation: float 7s infinite ease-in;
+            z-index: 1;
         }
 
         @keyframes float {
             0% { transform: translateY(0) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-110vh) rotate(20deg); opacity: 0; }
+            100% { transform: translateY(-120vh) rotate(20deg); opacity: 0; }
         }
+    </style>
+</head>
+<body>
 
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
+    <div class="card">
+        <div class="photo-frame">
+            <img src="hadiah.jpg" alt="Hadiah Ulang Tahun">
+        </div>
+        
+        <h1>Happy Birthday! 🎂</h1>
+        <h2>31</h2>
+        <p>Cheers to 31 years of being awesome! Semoga di usia baru ini, setiap langkahmu selalu dimudahkan dan setiap doa kamu segera dikabulkan. Selamat merayakan hari spesialmu.</p>
+        <button class="btn" onclick="celebrate()">Klik Kejutan!</button>
+    </div>
 
-    &lt;div class=&quot;card&quot;&gt;
-        &lt;h1&gt;Happy Birthday! 🎂&lt;/h1&gt;
-        &lt;h2&gt;31&lt;/h2&gt;
-        &lt;p&gt;Cheers to 31 years of being awesome! Semoga di usia baru ini, setiap langkahmu selalu dimudahkan dan setiap doamu segera dikabulkan. Selamat merayakan hari spesialmu dan petualangan baru yang luar biasa.&lt;/p&gt;
-        &lt;button class=&quot;btn&quot; onclick=&quot;celebrate()&quot;&gt;Klik Untuk Kejutan!&lt;/button&gt;
-    &lt;/div&gt;
-
-    &lt;script&gt;
+    <script>
         function createBalloon() {
             const colors = ['#ff7675', '#74b9ff', '#55efc4', '#ffeaa7', '#a29bfe'];
             const balloon = document.createElement('div');
             balloon.className = 'balloon';
             balloon.style.left = Math.random() * 100 + 'vw';
             balloon.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-            balloon.style.animationDuration = (Math.random() * 3 + 5) + 's';
+            balloon.style.animationDuration = (Math.random() * 3 + 4) + 's';
             document.body.appendChild(balloon);
-            
-            setTimeout(() =&gt; { balloon.remove(); }, 8000);
+            setTimeout(() => { balloon.remove(); }, 7000);
         }
 
         function celebrate() {
-            for(let i=0; i&lt;31; i++) {
+            for(let i=0; i<31; i++) {
                 setTimeout(createBalloon, i * 100);
             }
-            alert(&quot;Happy 31st Birthday! 🥳✨&quot;);
+            alert("HBD ke-31! Semoga panjang umur dan bahagia selalu! 🥳✨");
         }
 
-        // Munculkan balon otomatis saat loading
         setInterval(createBalloon, 1500);
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+    </script>
 </body>
 </html>
