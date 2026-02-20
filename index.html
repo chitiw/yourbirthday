@@ -1,24 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="id">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-	<title></title>
-	<meta name="generator" content="LibreOffice 25.8.4.2 (Linux)"/>
-	<meta name="created" content="00:00:00"/>
-	<meta name="changed" content="00:00:00"/>
-	<style type="text/css">
-		@page { size: 8.27in 11.69in; margin: 0.79in }
-		p { margin-bottom: 0.1in; line-height: 115%; background: transparent }
-		pre { font-size: 10pt; font-family: "Liberation Mono", monospace; background: transparent }
-	</style>
-</head>
-<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><pre>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;id&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
-    &lt;title&gt;Happy Birthday!&lt;/title&gt;
-    &lt;style&gt;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <style>
         body {
             margin: 0;
             padding: 0;
@@ -28,19 +14,21 @@
             min-height: 100vh;
             background: linear-gradient(135deg, #fceabb, #f8b500);
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            overflow: hidden;
+            overflow-x: hidden;
             text-align: center;
         }
 
         .card {
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             padding: 2rem;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
             max-width: 400px;
+            width: 90%;
             z-index: 10;
             transform: scale(0);
             animation: popIn 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+            margin: 20px;
         }
 
         @keyframes popIn {
@@ -49,22 +37,44 @@
 
         h1 {
             color: #d35400;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin-bottom: 0.5rem;
         }
 
         .age {
-            font-size: 5rem;
+            font-size: 4rem;
             font-weight: bold;
             color: #e67e22;
-            margin: 10px 0;
+            margin: 5px 0;
             display: block;
         }
 
         p {
             color: #34495e;
             line-height: 1.6;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            margin: 10px 0;
+        }
+
+        /* Gaya untuk Voucher */
+        .voucher-container {
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px dashed #ffd32a;
+        }
+
+        .voucher-img {
+            width: 100%;
+            max-width: 320px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            cursor: pointer;
+        }
+
+        .voucher-img:hover {
+            transform: scale(1.05);
         }
 
         .confetti {
@@ -73,42 +83,36 @@
             height: 10px;
             background-color: #f00;
             animation: fall 3s linear infinite;
+            top: -10px;
         }
-	.voucher-img {
-    width: 100%;
-    max-width: 350px; /* Sesuaikan dengan lebar yang kamu mau */
-    height: auto;
-    border-radius: 15px;
-    margin-top: 20px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
-}
-
-.voucher-img:hover {
-    transform: scale(1.05);
-}
 
         @keyframes fall {
-            to { transform: translateY(100vh) rotate(360deg); }
+            to { transform: translateY(105vh) rotate(360deg); }
         }
-    &lt;/style&gt;
-&lt;/head&gt;
-&lt;body&gt;
+    </style>
+</head>
+<body>
 
-    &lt;div class=&quot;card&quot;&gt;
-        &lt;h1&gt;Happy Birthday! 🎂&lt;/h1&gt;
-        &lt;span class=&quot;age&quot;&gt;31&lt;/span&gt;
-        &lt;p&gt;&lt;strong&gt;Cheers to 31 years of being awesome!&lt;/strong&gt;&lt;/p&gt;
-        &lt;p&gt;Semoga di usia baru ini, setiap langkahmu selalu dimudahkan dan setiap doamu segera dikabulkan.&lt;/p&gt;
-    &lt;/div&gt;
-	<p>🎁 <strong>This is gift, claim it now!:</strong></p>
-<img src="voucher.png" alt="Voucher Ulang Tahun" class="voucher-img">
+    <div class="card">
+        <h1>Happy Birthday! 🎂</h1>
+        <span class="age">31</span>
+        
+        <p><strong>Cheers to 31 years of being awesome!</strong></p>
+        <p>Semoga di usia baru ini, setiap langkahmu selalu dimudahkan dan setiap doamu segera dikabulkan.</p>
 
-    &lt;script&gt;
+        <div class="voucher-container">
+            <p style="color: #d35400; font-weight: bold;">🎁 Surprise! Ini voucher khusus buat kamu:</p>
+            
+            <img src="voucher.png" alt="Voucher Hadiah" class="voucher-img">
+            
+        </div>
+    </div>
+
+    <script>
         // Efek Konfeti Sederhana
         function createConfetti() {
             const colors = ['#f1c40f', '#e67e22', '#e74c3c', '#3498db', '#2ecc71'];
-            for (let i = 0; i &lt; 50; i++) {
+            for (let i = 0; i < 50; i++) {
                 const confetti = document.createElement('div');
                 confetti.classList.add('confetti');
                 confetti.style.left = Math.random() * 100 + 'vw';
@@ -119,8 +123,6 @@
             }
         }
         createConfetti();
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;</pre>
+    </script>
 </body>
 </html>
