@@ -74,6 +74,19 @@
             background-color: #f00;
             animation: fall 3s linear infinite;
         }
+	.voucher-img {
+    width: 100%;
+    max-width: 350px; /* Sesuaikan dengan lebar yang kamu mau */
+    height: auto;
+    border-radius: 15px;
+    margin-top: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.voucher-img:hover {
+    transform: scale(1.05);
+}
 
         @keyframes fall {
             to { transform: translateY(100vh) rotate(360deg); }
@@ -88,6 +101,8 @@
         &lt;p&gt;&lt;strong&gt;Cheers to 31 years of being awesome!&lt;/strong&gt;&lt;/p&gt;
         &lt;p&gt;Semoga di usia baru ini, setiap langkahmu selalu dimudahkan dan setiap doamu segera dikabulkan.&lt;/p&gt;
     &lt;/div&gt;
+	<p>🎁 <strong>This is gift, claim it now!:</strong></p>
+<img src="voucher.png" alt="Voucher Ulang Tahun" class="voucher-img">
 
     &lt;script&gt;
         // Efek Konfeti Sederhana
